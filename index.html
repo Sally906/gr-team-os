@@ -5,43 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GR Team 操作系统</title>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
-  <style>
-    .sidebar {
-      width: 280px;
-    }
-    .content {
-      padding-top: 20px;
-    }
-    .markdown-section pre > code {
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-    .markdown-section table {
-      display: block;
-      overflow-x: auto;
-    }
-  </style>
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
       name: 'GR Team 操作系统',
-      repo: '',
-      loadSidebar: '_sidebar.md',
-      subMaxLevel: 3,
-      auto2top: true,
-      search: {
-        maxAge: 86400000,
-        paths: 'auto',
-        placeholder: '搜索内容...',
-        noData: '未找到相关结果'
-      },
-      notFoundMsg: '页面未找到',
-      relativePath: true
-    };
+      loadSidebar: '_sidebar.md',   // ← 明确指定文件名
+      auto2top: true
+    }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
