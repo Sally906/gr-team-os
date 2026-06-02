@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>GR Team 操作系统</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <!-- 修复：使用正确的 https:// 路径 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
       name: 'GR Team 操作系统',
-      loadSidebar: '_sidebar.md',  // 关键：明确指定菜单文件
+      loadSidebar: '_sidebar.md',
       auto2top: true
     }
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- 修复：使用正确的 https:// 路径 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
 </html>
