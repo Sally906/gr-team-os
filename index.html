@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>GR Team 操作系统 v1.0</title>
+  <!-- docsify 主题 CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <!-- 可选：适配移动端和打印样式 -->
+  <style>
+    @media print {
+      .sidebar {
+        display: none;
+      }
+      .content {
+        margin: 0;
+      }
+      .markdown-section {
+        max-width: 100%;
+      }
+    }
+    /* 让代码块换行，避免溢出 */
+    .markdown-section pre > code {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    /* 表格在小屏上可横向滚动 */
+    .markdown-section table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <!-- docsify 核心库 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- 可选插件：搜索、复制代码、图片缩放等 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <script>
+    window.$docsify = {
+      name: 'GR Team 操作系统',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '搜索内容...',
+        noData: '未找到相关结果'
+      },
+      copyCode: {
+        buttonText: '复制',
+        successText: '已复制'
+      },
+      notFoundMsg: '页面未找到',
+      relativePath: true
+    };
+  </script>
+</body>
+</html>
