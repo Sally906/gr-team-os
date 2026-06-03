@@ -1,20 +1,347 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GR Team 操作系统</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR Team 操作系统 v1.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1a1a2e;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        /* 侧边栏 */
+        .sidebar {
+            width: 280px;
+            background: #ffffff;
+            border-right: 1px solid #e1e4e8;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding: 24px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        .sidebar h1 {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 0 20px 20px 20px;
+            border-bottom: 1px solid #e1e4e8;
+            margin-bottom: 20px;
+            color: #0a58ca;
+        }
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0 12px;
+        }
+        .sidebar nav ul li {
+            margin: 4px 0;
+        }
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 12px;
+            color: #24292f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .sidebar nav ul li a:hover {
+            background: #f0f2f5;
+            color: #0a58ca;
+        }
+        /* 主内容区 */
+        .content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 40px 48px;
+            max-width: calc(100% - 280px);
+        }
+        .content section {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            display: none;
+        }
+        .content section.active {
+            display: block;
+        }
+        .content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0a58ca;
+            color: #1a1a2e;
+        }
+        .content h3 {
+            font-size: 20px;
+            margin: 24px 0 12px 0;
+            color: #2c3e50;
+        }
+        .content p {
+            line-height: 1.7;
+            margin: 16px 0;
+            color: #2c3e50;
+        }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .content th, .content td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .content th {
+            background: #f0f2f5;
+            font-weight: 600;
+        }
+        .content code {
+            background: #f0f2f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .content ul, .content ol {
+            margin: 12px 0 12px 24px;
+        }
+        .content li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+            .content {
+                margin-left: 0;
+                max-width: 100%;
+                padding: 20px;
+            }
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: 'GR Team 操作系统',
-      loadSidebar: '_sidebar.md',
-      auto2top: true
+<div class="container">
+    <div class="sidebar">
+        <h1>📋 GR Team 操作系统 v1.0</h1>
+        <nav>
+            <ul>
+                <li><a href="#" data-page="home">🏠 首页</a></li>
+                <li><a href="#" data-page="page1">👥 一、角色与职责</a></li>
+                <li><a href="#" data-page="page2">🧠 二、知识库模块</a></li>
+                <li><a href="#" data-page="page3">⚙️ 三、工作流程</a></li>
+                <li><a href="#" data-page="page4">✅ 四、质量门</a></li>
+                <li><a href="#" data-page="page5">📝 五、失败日志</a></li>
+                <li><a href="#" data-page="page6">📊 六、运行与考核</a></li>
+                <li><a href="#" data-page="page7">🚀 七、实施步骤</a></li>
+                <li><a href="#" data-page="page8">📎 八、模板索引</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <!-- 首页 -->
+        <section id="home" class="active">
+            <h2>GR Team 操作系统 v1.0</h2>
+            <p><strong>系统核心目标</strong><br>将GR工作从“依赖个人经验、关系和记性”转变为<strong>依赖可沉淀、可审计、可复用、可学习的系统能力</strong>，降低人员变动带来的风险，提升工作质量和稳定性。</p>
+            <p>本系统包含以下核心模块：</p>
+            <ul>
+                <li><strong>角色与职责</strong> — DRI机制，明确每个角色的唯一责任人</li>
+                <li><strong>知识库模块</strong> — Company Brain（GR版）的内容与规则</li>
+                <li><strong>工作流程</strong> — 政策监测、资质申报等核心流程标准化</li>
+                <li><strong>质量门</strong> — 对外输出的强制审核机制</li>
+                <li><strong>失败日志</strong> — 错误记录与系统改进闭环</li>
+                <li><strong>运行与考核</strong> — Scorecard指标与团队KPI</li>
+                <li><strong>实施步骤</strong> — 90天落地计划</li>
+                <li><strong>模板索引</strong> — 可直接使用的模板清单</li>
+            </ul>
+        </section>
+
+        <!-- 页面1: 角色与职责 -->
+        <section id="page1">
+            <h2>一、系统核心角色与职责（DRI机制）</h2>
+            <table>
+                <thead>
+                    <tr><th>角色</th><th>核心职责</th><th>关键产出</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>GR Team Leader</td><td>系统最终owner；审批高风险事项</td><td>系统运行报告；团队KPI</td></tr>
+                    <tr><td>GR知识库管理员</td><td>维护Company Brain的结构、权限和质量</td><td>知识库目录；权限表</td></tr>
+                    <tr><td>政策DRI</td><td>负责特定政策领域的监测、解读、更新</td><td>政策解读简报；更新日志</td></tr>
+                    <tr><td>资质项目DRI</td><td>负责单个资质申报的全流程管理</td><td>项目计划；复盘报告</td></tr>
+                    <tr><td>政府关系DRI</td><td>负责与指定部门的日常沟通、关系管理</td><td>沟通纪要；联系人档案</td></tr>
+                    <tr><td>质量门审核人</td><td>按标准审核所有对外输出</td><td>审核记录；修改意见</td></tr>
+                </tbody>
+            </table>
+            <p><strong>DRI核心原则：</strong>每个关键结果有且仅有一位最终负责人，DRI可以协调他人但责任不可转移。</p>
+        </section>
+
+        <!-- 页面2: 知识库模块 -->
+        <section id="page2">
+            <h2>二、GR Company Brain（知识库）</h2>
+            <p><strong>本质：</strong>一个有权限管理、可查询、有主人的GR专属知识中心，不是共享文件夹。</p>
+            <h3>必须包含的内容类型</h3>
+            <table>
+                <thead><tr><th>内容类型</th><th>主人（DRI）</th><th>更新规则</th></tr></thead>
+                <tbody>
+                    <tr><td>政策解读</td><td>政策DRI</td><td>正式稿发布后5个工作日内更新</td></tr>
+                    <tr><td>会议纪要</td><td>参会GR</td><td>会后24小时内入库</td></tr>
+                    <tr><td>资质材料包</td><td>资质项目DRI</td><td>每次申报后更新</td></tr>
+                    <tr><td>政府联系人档案</td><td>政府关系DRI</td><td>每次互动后24小时内更新</td></tr>
+                    <tr><td>失败日志</td><td>当事DRI</td><td>发生后48小时内录入</td></tr>
+                </tbody>
+            </table>
+            <p><strong>使用规则：</strong>查询优先查知识库；对外引用必须注明来源和版本；发现错误直接@主人，1个工作日内响应。</p>
+        </section>
+
+        <!-- 页面3: 工作流程 -->
+        <section id="page3">
+            <h2>三、GR核心工作流程（AI Loop理念）</h2>
+            <h3>流程1：政策监测与解读</h3>
+            <table><thead><tr><th>步骤</th><th>触发</th><th>输出</th><th>质量门</th></tr></thead>
+            <tbody><tr><td>1.监测</td><td>官方发布</td><td>预警通知</td><td>-</td></tr>
+            <tr><td>2.研判</td><td>预警通知</td><td>相关性判断表</td><td>DRI复核</td></tr>
+            <tr><td>3.解读</td><td>判定相关</td><td>简报初稿</td><td>来源、事实、逻辑</td></tr>
+            <tr><td>4.审核</td><td>初稿完成</td><td>终版简报</td><td>Team Leader+法务审核</td></tr>
+            <tr><td>5.写回</td><td>审核通过</td><td>知识库条目</td><td>-</td></tr></tbody></table>
+            <h3>流程2：资质申报管理</h3>
+            <table><thead><tr><th>步骤</th><th>触发</th><th>输出</th><th>质量门</th></tr></thead>
+            <tbody><tr><td>1.立项</td><td>申报通知</td><td>立项申请</td><td>Leader审批</td></tr>
+            <tr><td>2.材料准备</td><td>项目启动</td><td>申报材料包</td><td>完整性检查</td></tr>
+            <tr><td>3.内部审核</td><td>材料完成</td><td>审核意见</td><td>业务+法务+财务审核</td></tr>
+            <tr><td>4.提交与跟进</td><td>审核通过</td><td>提交回执</td><td>-</td></tr>
+            <tr><td>5.结果复盘</td><td>结果公布</td><td>复盘报告</td><td>Leader审阅</td></tr></tbody></table>
+        </section>
+
+        <!-- 页面4: 质量门 -->
+        <section id="page4">
+            <h2>四、质量门（Quality Gate）</h2>
+            <p><strong>所有对外GR输出必须经过质量门，未通过不得发出。</strong></p>
+            <h3>检查清单</h3>
+            <table><thead><tr><th>检查项</th><th>具体问题</th></tr></thead>
+            <tbody>
+                <tr><td>来源</td><td>引用的数据、政策条款是否有可查证来源？来源是否最新？</td></tr>
+                <tr><td>事实</td><td>公司名称、数据、日期、人名、职务是否准确？</td></tr>
+                <tr><td>合规</td><td>是否涉及未公开信息、敏感数据？是否合规？</td></tr>
+                <tr><td>业务逻辑</td><td>诉求、建议是否符合公司实际能力？</td></tr>
+                <tr><td>语气</td><td>语气是否专业、尊重、立场正确？</td></tr>
+                <tr><td>审批状态</td><td>是否已获得DRI或Leader审批？</td></tr>
+            </tbody></table>
+            <p><strong>通过标准：</strong>所有适用项均为“是”。</p>
+        </section>
+
+        <!-- 页面5: 失败日志 -->
+        <section id="page5">
+            <h2>五、失败日志（Failure Log）</h2>
+            <p><strong>目的：</strong>不是追责，而是防止同样的错误发生两次。</p>
+            <h3>模板字段</h3>
+            <table><thead><tr><th>字段</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td>失败编号</td><td>FL-YYYY-MM-DD-001</td></tr>
+                <tr><td>登记人/发生日期</td><td>当事DRI / 实际日期</td></tr>
+                <tr><td>错误描述/影响</td><td>客观描述发生了什么及后果</td></tr>
+                <tr><td>根本原因</td><td>流程缺失？信息过时？判断失误？</td></tr>
+                <tr><td>预防措施</td><td>修改哪个SOP或知识库</td></tr>
+                <tr><td>负责人/状态</td><td>谁执行 / 进行中或已完成</td></tr>
+            </tbody></table>
+            <p><strong>使用规则：</strong>任何失败须在48小时内录入，每月召开失败复盘会，KPI包含完成率和落地率。</p>
+        </section>
+
+        <!-- 页面6: 运行与考核 -->
+        <section id="page6">
+            <h2>六、系统运行与考核</h2>
+            <h3>日常运行机制</h3>
+            <table><thead><tr><th>机制</th><th>频率</th><th>负责人</th></tr></thead>
+            <tbody>
+                <tr><td>政策扫描</td><td>每日</td><td>政策DRI</td></tr>
+                <tr><td>知识库巡检</td><td>每周</td><td>管理员</td></tr>
+                <tr><td>团队周会</td><td>每周</td><td>Team Leader</td></tr>
+                <tr><td>失败复盘会</td><td>每月</td><td>Team Leader</td></tr>
+            </tbody></table>
+            <h3>GR Team Scorecard（考核指标）</h3>
+            <table><thead><tr><th>维度</th><th>指标</th><th>目标值</th></tr></thead>
+            <tbody>
+                <tr><td>知识库健康度</td><td>核心政策解读覆盖率</td><td>≥95%</td></tr>
+                <tr><td>流程执行力</td><td>质量门一次通过率</td><td>≥80%</td></tr>
+                <tr><td>学习与改进</td><td>失败日志录入率</td><td>100%</td></tr>
+                <tr><td>业务结果</td><td>重要政策预警提前量</td><td>≥7个工作日</td></tr>
+            </tbody></table>
+        </section>
+
+        <!-- 页面7: 实施步骤 -->
+        <section id="page7">
+            <h2>七、90天实施计划</h2>
+            <table><thead><tr><th>阶段</th><th>时间</th><th>任务</th><th>产出</th></tr></thead>
+            <tbody>
+                <tr><td>准备</td><td>第1-2周</td><td>任命DRI、搭建知识库框架</td><td>角色任命、工具开通</td></tr>
+                <tr><td>试点</td><td>第3-8周</td><td>跑通2个政策领域+资质申报</td><td>解读、材料、日志</td></tr>
+                <tr><td>推广</td><td>第9-12周</td><td>全员培训、全流程切换</td><td>培训记录、系统v1.1</td></tr>
+            </tbody></table>
+            <p><strong>关键成功因素：</strong>领导支持、不要贪多、失败日志先跑起来、工具不要太复杂。</p>
+        </section>
+
+        <!-- 页面8: 模板索引 -->
+        <section id="page8">
+            <h2>八、模板索引</h2>
+            <p>以下模板可根据需要复制使用：</p>
+            <ul>
+                <li>📄 政策解读简报模板</li>
+                <li>📄 政府会议纪要模板</li>
+                <li>📄 质量门检查清单（打印版）</li>
+                <li>📄 失败日志录入表</li>
+                <li>📄 GR Worklog（个人日常记录）</li>
+                <li>📄 资质申报项目计划表</li>
+                <li>📄 知识库条目创建模板</li>
+                <li>📄 Scorecard 月度统计表</li>
+            </ul>
+            <p>👉 如需具体模板的详细内容，可联系系统管理员获取可编辑版本。</p>
+        </section>
+    </div>
+</div>
+
+<script>
+    // 菜单点击切换页面
+    const links = document.querySelectorAll('.sidebar nav a');
+    const sections = document.querySelectorAll('.content section');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const pageId = this.getAttribute('data-page');
+            sections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === pageId) {
+                    section.classList.add('active');
+                }
+            });
+            // 可选：更新URL hash
+            location.hash = pageId;
+        });
+    });
+    // 如果URL有hash，自动打开对应页面
+    if (location.hash) {
+        const hash = location.hash.substring(1);
+        const targetLink = document.querySelector(`.sidebar nav a[data-page="${hash}"]`);
+        if (targetLink) targetLink.click();
     }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+</script>
 </body>
 </html>
